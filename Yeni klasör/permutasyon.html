@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>PERMÜTASYON</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+            background-image: url("resim2.jpeg");
+            opacity: 0.7;
+
+        }
+
+        .box {
+            width: 500px;
+            height: 140px;
+            background-color: black;
+
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .btn-1 {
+            color: white;
+            margin-top: 4%;
+            width: 30%;
+            outline: none;
+            height: 5vh;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(90deg, rgb(157, 151, 175) 0%, rgb(68, 46, 109) 100%);
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+    <script>
+        function perm(sayi, dur) {
+            var sonuc = sayi;
+            if (dur == 0)
+                return 1;
+            else
+                return sayi * perm(sayi - 1, dur - 1);
+        }
+
+        function permutasyon_yonlendir() {
+            var permutasyon_ilk_deg = Number(document.getElementById("permutasyon_sayi_degeri").value);
+            var permutasyon_ikinci_deger = Number(document.getElementById("permutasyon_referans").value);
+            var permutasyon_alma_sonucu = perm(permutasyon_ilk_deg, permutasyon_ikinci_deger);
+            alert("Verdiğiniz değerler için permutasyon degeri  : " + permutasyon_alma_sonucu);
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <label for="Permutasyon"><b><i>Permütasyon Hesabı</i></b> </label><br>
+        <br>Hangi sayının: <input type="text" id="permutasyon_sayi_degeri"><br>
+        Hangi sayıya göre permutasyonu : <input type="text" id="permutasyon_referans"><br>
+        Hesapla : <input type="button" class="btn-1" value="Hesapla" id="permutasyon_alma_hesapla" onclick="permutasyon_yonlendir()">
+
+    </div>
+
+
+
+</body>
+
+</html>

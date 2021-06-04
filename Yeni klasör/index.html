@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<title>OLASILIK VE İSTATİSTİK</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.arkaplan{
+
+  background-image: url("arkaplan.jpeg");
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("olasilik2.jpeg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+  font-weight: bold;
+}
+
+h3{
+  text-align: center;
+  color: #0000cd;
+  background-color: coral;
+  font-weight: bold;
+}
+
+
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">Anasayfa</a>
+   
+    <div class="w3-right w3-hide-small">
+    </div>
+   
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+</nav>
+
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small"  >OLASILIK VE İSTATİSTİK </span><br>
+    <span class="w3-large"> OLASILIK VE İSTATİSTİK HESAPLAMA SİSTEMİ                 </span>
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off" style="font-weight: bold; background-color: darkblue;">HESAPLAMA İŞLEMLERİ</a></p>
+  </div> 
+</header>
+
+
+
+
+<div style="padding:128px 16px" id="about">
+  <h3 class="w3-center" style="background-color: burlywood; color: black;">HESAPLAMA İŞLEMLERİ</h3>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+          <h3>ARİTMETİK ORTALAMA</h3>
+          <p>Aritmetik Ortalama, bir sayı dizisindeki elemanların toplamının eleman sayısına bölünmesi ile elde edilir. İstatistik bilim dalında hem betimsel istatistik alanında hem de çıkarımsal istatistik alanında en çok kullanan merkezi eğilim ölçüsü' dür.</p>
+          <a href="aritmetik_ortalama.html"><p><button  class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30">Hesapla</button></p></a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <div class="w3-container" style="background: url(images.jpg);font-weight: bold;">
+          <h3>GEOMETRİK ORTALAMA</h3>
+          <p>Geometrik Ortalama, tipik değerleri veya sayıların merkezi eğilimini belirtmek için genellikle bir sayı kümesine atanan değerlerin çarpımını kullanan bir ortalama türüdür.</p>
+          <a href="geometrikortalama.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30">Hesapla</button></p></a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+          <h3>MOD</h3>
+          <p>Mod, istatistik bilimi için mod bir veri kümesi içinde en sık görülen değerdir. Tepedeğer olarak da adlandırılır. </p>
+          <a href="mod.html"> <p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+          <h3>MEDYAN</h3>
+          <p>Medyan, bir anakütle ya da örneklem veri serisini küçükten büyüğe doğru sıraladığımızda, seriyi ortadan ikiye ayıran değere denir. İstatistiğin bir alt dalı olan betimsel istatistikte medyan bir merkezsel konum ölçüsü kabul edilir.</p>
+          <a href="medyan.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w3-container" style="padding:128px 16px" id="about">
+    <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>STANDART SAPMA</h3>
+            <p>Standart Sapma, varyansın kareköküdür. 
+              Daha matematiksel bir ifade ile standart sapma veri değerlerinin aritmetik ortalamadan farklarının karelerinin toplamının veri sayısı -1'e bölümünün kareköküdür, yani verilerin ortalamadan sapmalarının kareler ortalamasının karekökü olarak tanımlanır.
+              Olasılık kuramı ve istatistik bilim dallarında, bir anakütle, bir örneklem, 
+              bir olasılık dağılımı veya bir rassal değişken, veri değerlerinin yayılımının özetlenmesi için kullanılan bir ölçüdür.</p>
+              <a href="standartsapma.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>FAKTÖRİYEL</h3>
+            <p>Faktöriyel, matematikte, sağına ünlem işareti konulmuş sayıya verilen isim, daha genel olan Gama fonksiyonunun tam sayılarla sınırlanmış özel bir durumudur. 
+              1'den başlayarak belirli bir sayma sayısına kadar olan sayıların çarpımına o sayının faktöriyeli denir.</p>
+              <a href="faktoriyel.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30">Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>PERMÜTASYON</h3>
+            <p>Permütasyon, her sembolün bir veya birden fazla kullanıldığı bir sıralı dizi yöntemidir. 
+              n adet elemanı olan bir kümenin içinden r adet eleman seçilmesi işlemidir.
+              Permütasyonun kombinasyondan farkı, sıralamanın önemli olmasıdır.</p>
+              <a href="permutasyon.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>KOMBİNASYON</h3>
+            <p>Kombinasyon, bir nesne grubu içerisinden sıra gözetmeksizin yapılan seçimlerdir. 
+              Nesne grubuna karşılık gelen kümenin alt kümeleri olarak da tanımlanabilir. 
+              Çünkü alt kümelerde sıra önemli değildir.</p>
+              <a href="kombinasyon.html"> <p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-container" style="padding:128px 16px" id="about">
+    <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>BERNOULLI DAĞILIMI</h3>
+            <p>Bernoulli dağılımı olasılık kuramı ve istatistik bilim dallarında, 
+              p olasılıkla başarı ile 1 değeri alan ve {\displaystyle q=1-p} olasılıkla başarısızlık ile 
+              0 değeri alan bir ayrık olasılık dağılımıdır.</p>
+              <a href="bernoulli.html"> <p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30">Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>NEGATİF BİNOM DAĞILIMI</h3>
+            <p>Olasılık kuramı ve istatistik bilim dallarında negatif binom dağılım bir ayrık olasılık dağılım tipidir.</p>
+            <a href="negatif_binom.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>GAMMA DAĞILIMI</h3>
+            <p>Olasılık kuramı ve istatistik bilim dallarında gamma dağılımı iki parametreli bir sürekli olasılık dağılımıdir. 
+              Bu parametrelerden biri ölçek parametresi θ; diğeri ise şekil parametresi k olarak anılır.</p>
+              <a href="gammadagilim.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>BETA DAĞILIMI</h3>
+            <p>Olasılık kuramı ve istatistikte, beta dağılımı, [0,1] aralığında iki tane pozitif şekil parametresi ile ifade edilmiş bir sürekli olasılık dağılımları ailesidir.</p>
+            <a href="betadagilim.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"></i> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w3-container" style="padding:128px 16px" id="about">
+    <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>GEOMETRİK DAĞILIM</h3>
+            <p>Olasılık kuramı ve istatistik bilim dallarında geometrik dağılım şu iki şekilde ifade edilebilen ayrık olasılık dağılımıdır:
+              Bütün tam sayılar setine, yani { 1, 2, 3, .... } üzerine, bağlı olarak X sayıda Bernoulli denemesinde ilk başarıyı elde etmenin olasılık dağılımı; veya
+              Bütün tam sayılar setine, yani {1, 2 ,3 , ....} üzerine, bağlı olarak ilk başarıyı elde etmeden Y = X − 1 başarısızlık sayısı olasılık dağılımı.</p>
+            <a href="geometrikdagilim.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+     
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>ÜSTEL DAĞILIM</h3>
+            <p>Olasılık kuramı ve istatistik bilim dallarında üstel dağılımı bir sürekli olasılık dağılımları grubudur.</p>
+            <a href="usteldagilim.html"> <p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg);font-weight: bold;">
+            <h3>POISSON DAĞILIMI</h3>
+            <p>Poisson dağılımı, olasılık kuramı ve istatistik bilim kollarında bir ayrık olasılık dağılımı olup belli bir sabit zaman birim aralığında meydana gelme sayısının olasılığını ifade eder.</p>
+            <a href="poissonn.html"><p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"></i> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <div class="w3-container"style="background: url(images.jpg); font-weight: bold;">
+            <h3>HYPERGEOMETRİK DAĞILIM</h3>
+            <p>Olasılık kuramında ve istatistikte, hipergeometrik dağılım sonlu bir ana kütle içinden tekrar geri koymadan birbiri arkasına n tane nesnenin çekilmesi işlemi için başarı sayısının dağılımını bir ayrık olasılık dağılımı şekilde betimler</p>
+            <a href="hypergeometricdagilim.html"> <p><button class="w3-button w3-light-grey w3-block"><img src="icon1.png" width="25" height="30"></i> Hesapla</button></p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ 
+<script>
+
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

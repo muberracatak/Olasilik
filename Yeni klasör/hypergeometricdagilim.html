@@ -1,0 +1,126 @@
+<HTML>
+
+<HEAD>
+    <title>HYPERGEOMETRIC DAĞILIM</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1px;
+            opacity: 0.7;
+            background-image: url("resim2.jpeg");
+        }
+
+        .box {
+            width: 500px;
+            height: 200px;
+            background-color: black;
+
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .btn-1 {
+            color: white;
+            margin-top: 4%;
+            width: 30%;
+            outline: none;
+            height: 5vh;
+            border-radius: 50px;
+            border: none;
+            background-color: linear-gradient(90deg, rgb(157, 151, 175) 0%, rgb(68, 46, 109) 100%);
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+    <SCRIPT LANGUAGE="JavaScript">
+
+        var x, m, n, nn, h, s;
+
+        function hyp(x, n, m, nn) {
+            var nz, mz;
+            if (m < n) {
+                nz = m;
+                mz = n
+            } else {
+                nz = n;
+                mz = m
+            }
+            var h = 1, s = 1, k = 0, i = 0;
+            while (i < x) {
+                while ((s > 1) && (k < nz)) {
+                    h = h * (1 - mz / (nn - k));
+                    s = s * (1 - mz / (nn - k));
+                    k = k + 1;
+                }
+                h = h * (nz - i) * (mz - i) / (i + 1) / (nn - nz - mz + i + 1);
+                s = s + h;
+                i = i + 1;
+            }
+            while (k < nz) {
+                s = s * (1 - mz / (nn - k));
+                k = k + 1;
+            }
+            return s;
+        }
+
+        function compute(form) {
+            var Prob, nn, m, n, x;
+            nn = Number(document.getElementById("nn_degeri").value);
+            m = Number(document.getElementById("m_degeri").value);
+            n = Number(document.getElementById("n_degeri").value);
+            x = Number(document.getElementById("x_degeri").value);
+            if ((n <= 0) || (m <= 0) || (nn <= 0)) {
+                alert("Parametre değerleri pozitif olmalıdır !");
+                Prob = 0
+            } else if ((m > nn) || (n > nn)) {
+                alert("m ve n değeri N değerinden az olmalı ");
+                Prob = 0
+            } else if ((x < 0) || (x < n + m - nn)) {
+                Prob = 0
+            } else if ((x >= n) || (x >= m)) {
+                Prob = 1
+            } else {
+                if (2 * m > nn) {
+                    if (2 * n > nn) {
+                        Prob = hyp(nn - m - n + x, nn - n, nn - m, nn)
+                    } else {
+                        Prob = 1 - hyp(n - x - 1, n, nn - m, nn)
+                    }
+                } else if (2 * n > nn) {
+                    Prob = 1 - hyp(m - x - 1, m, nn - n, nn)
+                } else {
+                    Prob = hyp(x, n, m, nn)
+                }
+            }
+            Prob = Math.round(Prob * 100000) / 100000;
+            alert("Hypergeometrik dağılımın sonucu : " + Prob.toFixed(2));
+        }
+
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    
+
+        <div class="box">
+
+            <label for="Hypergeometric Dağılım"><b><i>Hipergeometrik Dağılım</i></b> </label><br>
+            
+             nn değeri: <input type="text" name="nn_degeri" id="nn_degeri"><br>
+             m değeri: <input type="text" name="m_degeri" id="m_degeri"><br>
+           n değeri: <input type="text" name="n_degeri" id="n_degeri"><br>
+            x-değeri: <input type="text" name="x_degeri" id="x_degeri"><br>
+            Sonuç : <input type="button" class="btn-1" value="Hesapla"  onclick="compute(form)"> <br>
+        </div>
+
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ARİTMETİK ORTALAMA</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 300px;
+            background-image: url("resim2.jpeg");
+            opacity: 0.7;
+
+        }
+
+        .box {
+            width: 500px;
+            height: 120px;
+            background-color: black;
+
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .btn-1 {
+            color: white;
+            margin-top: 4%;
+            width: 30%;
+            outline: none;
+            height: 5vh;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(90deg, rgb(157, 151, 175) 0%, rgb(68, 46, 109) 100%);
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+    <script>
+
+        function ao_hesabı() {
+            var string = document.getElementById('numbers').value;
+            var array = string.split(',');
+            var sum = 0;
+
+            for (index = 0; index < array.length; ++index) {
+                var myx = parseFloat(array[index]);
+                if (isNaN(myx)) {
+                    alert(myx + 'bir sayı değil. Lütfen sayıları virgül ile ayırarak giriniz.');
+                    return false;
+                }
+                sum = sum + myx;
+            }
+            var avrg = sum / array.length;
+
+            alert("Sayılarınızın aritmetik ortalama değeri : " + avrg);
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <label for="Aritmetik Ortalama"><b><i>Aritmetik Ortalama</i></b> </label><br><br>
+        Sayılarınızı girin (Virgül ile ayırın) : <input type="text" id="numbers" /><br />
+        <input type="button" class= "btn-1" value="Hesapla" id="arit_ort_hesapla" onclick="ao_hesabı()"> <br>
+
+    </div>
+
+</body>
+
+</html>

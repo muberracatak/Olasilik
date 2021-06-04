@@ -1,0 +1,123 @@
+<HTML>
+
+<HEAD>
+    <title>BETA DAĞILIMI</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            background-image: url("resim2.jpeg");
+            opacity: 0.7;
+
+        }
+
+        .box {
+            width: 500px;
+            height: 170px;
+            background-color: black;
+
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .btn-1 {
+            color: white;
+            margin-top: 4%;
+            width: 30%;
+            outline: none;
+            height: 5vh;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(90deg, rgb(157, 151, 175) 0%, rgb(68, 46, 109) 100%);
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+    <SCRIPT LANGUAGE="JavaScript">
+
+        function LogGamma(Z) {
+            with (Math) {
+                var S = 1 + 76.18009173 / Z - 86.50532033 / (Z + 1) + 24.01409822 / (Z + 2) - 1.231739516 / (Z + 3) + .00120858003 / (Z + 4) - .00000536382 / (Z + 5);
+                var LG = (Z - .5) * log(Z + 4.5) - (Z + 4.5) + log(S * 2.50662827465);
+            }
+            return LG
+        }
+
+        function Betinc(X, A, B) {
+            var A0 = 0;
+            var B0 = 1;
+            var A1 = 1;
+            var B1 = 1;
+            var M9 = 0;
+            var A2 = 0;
+            var C9;
+            while (Math.abs((A1 - A2) / A1) > .00001) {
+                A2 = A1;
+                C9 = -(A + M9) * (A + B + M9) * X / (A + 2 * M9) / (A + 2 * M9 + 1);
+                A0 = A1 + C9 * A0;
+                B0 = B1 + C9 * B0;
+                M9 = M9 + 1;
+                C9 = M9 * (B - M9) * X / (A + 2 * M9 - 1) / (A + 2 * M9);
+                A1 = A0 + C9 * A1;
+                B1 = B0 + C9 * B1;
+                A0 = A0 / B1;
+                B0 = B0 / B1;
+                A1 = A1 / B1;
+                B1 = 1;
+            }
+            return A1 / A
+        }
+
+        function compute(form) {
+            Z = Number(document.getElementById("z_degeri").value);
+            A = Number(document.getElementById("a_degeri").value);
+            B = Number(document.getElementById("b_degeri").value);
+            with (Math) {
+                if (A <= 0) {
+                    alert("Alpha değeri pozitif olmalı !")
+                } else if (B <= 0) {
+                    alert("Beta değeri pozitif olmalı !")
+                } else if (Z <= 0) {
+                    Betacdf = 0
+                } else if (Z >= 1) {
+                    Betacdf = 1
+                } else {
+                    S = A + B;
+                    BT = exp(LogGamma(S) - LogGamma(B) - LogGamma(A) + A * log(Z) + B * log(1 - Z));
+                    if (Z < (A + 1) / (S + 2)) {
+                        Betacdf = BT * Betinc(Z, A, B)
+                    } else {
+                        Betacdf = 1 - BT * Betinc(1 - Z, B, A)
+                    }
+                }
+                Betacdf = Betacdf + .000005
+                s = " " + Betacdf
+                s = s.substr(0, 8);
+                beta_bek_deger = A / A + B;
+                beta_varyans = (A * B) / (A + B) * (A + B) * (A + B + 1);
+            }
+            alert("Beta dağılım sonucu : " + s + "\nBeklenen değer : " + beta_bek_deger + "\nVaryans değeri : " + beta_varyans);
+        }
+
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <div class="box">
+        <label for="Beta dağlımı"><b><i>Beta Dağlımı</i></b> </label><br><br>
+        Beta dağılım Z Değerini Giriniz : <input type="text" name="z_degeri" id="z_degeri"><br>
+        Beta dağılım Alfa Değerini Giriniz : <input type="text" name="a_degeri" id="a_degeri"><br>
+        Beta dağılım Beta Değerini Giriniz : <input type="text" name="b_degeri" id="b_degeri"><br>
+        <input type="button" value="Hesapla" class="btn-1" onclick="compute(this.form)"> <br>
+    </div>
+
+</BODY>
+
+</HTML>

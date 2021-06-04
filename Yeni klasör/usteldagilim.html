@@ -1,0 +1,81 @@
+<HTML>
+
+<HEAD>
+    <title>ÜSTEL DAĞILIM</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("resim2.jpeg");
+            opacity: 0.7;
+
+        }
+
+        .box {
+            width: 500px;
+            height: 160px;
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .btn-1 {
+            color: white;
+            margin-top: 4%;
+            width: 30%;
+            outline: none;
+            height: 5vh;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(90deg, rgb(157, 151, 175) 0%, rgb(68, 46, 109) 100%);
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+    <SCRIPT LANGUAGE="JavaScript">
+
+        function compute(form) {
+            X = Number(document.getElementById("x_degeri").value);
+            Theta = Number(document.getElementById("theta_degeri").value);
+            B = Number(document.getElementById("B_degeri").value);
+            with (Math) {
+                if (B <= 0) {
+                    alert("Ölçek parametresi pozitif olmalıdır!")
+                } else {
+                    Z = Theta + B * X;
+                    gumbcdf = exp(-exp(-Z));
+                    gumbcdf = round(gumbcdf * 100000) / 100000;
+                    ustel_bek_deger = 1 / B;
+                    ustel_varyans = 1 / B * B;
+                }
+            }
+
+            alert("Üstel Dağılımın sonucu : " + gumbcdf + "\nBeklenen değer : " + ustel_bek_deger + "\nVaryans değeri : " + ustel_varyans);
+        }
+
+    </SCRIPT>
+</HEAD>
+
+<BODY>
+    <div syle= "text-align: center;">
+        
+        <h1>Üstel Dağılım</h1>
+        
+        <div class="box">
+            <label for="Geometrik Ortalama"><b><i>Üstel Dağılım</i></b> </label><br>
+            <br>Üstel Dağılım x Değerini Giriniz : <input type="text" name="x_degeri" id="x_degeri"><br>
+            Üstel Dağılım Theta Değerini Giriniz : <input type="text" name="theta_degeri" id="theta_degeri"><br>
+            Üstel Dağılım B Değerini Giriniz : <input type="text" name="B_degeri" id="B_degeri"><br>
+            <input type="button" class="btn-1" value="Hesapla" id="ustel_hesapla" onclick="compute()"> <br>
+        </div>
+
+    </div>
+</BODY>
+
+</HTML>

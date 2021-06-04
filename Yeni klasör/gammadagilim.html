@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>GAMMA DAĞILIMI</title>
+
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 300px;
+            background-image: url("resim2.jpeg");
+            opacity: 0.7;
+
+        }
+
+        .box {
+            width: 500px;
+            height: 150px;
+            background-color: black;
+
+            border: 1px solid black;
+            border-radius: 20px;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .btn-1 {
+            color: white;
+            margin-top: 4%;
+            width: 30%;
+            outline: none;
+            height: 5vh;
+            border-radius: 50px;
+            border: none;
+            background: linear-gradient(90deg, rgb(157, 151, 175) 0%, rgb(68, 46, 109) 100%);
+            font-size: larger;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+        }
+
+    </style>
+
+    <script>
+        function gamma() {  
+            var e=Number(2.71);
+            var gamma_n=Number(document.getElementById("gamma_n_degeri").value);
+            //var gamma_x=Number(document.getElementById("gamma_x_degeri").value);
+            var gamma_lambda=Number(document.getElementById("gamma_lambda").value);
+
+           // var gamma_hesap = ( gamma_lambda * ((gamma_lambda * gamma_x) ** (gamma_n - 1))
+           // / (Math.integral((gamma_x ** (gamma_n - 1)) * (e ** (-gamma_n)))) ); 
+            var gamma_bek_deg=(gamma_n/gamma_lambda.toFixed(2));
+            var gamma_varyans=(gamma_n/(gamma_lambda**2));
+
+            alert("Gamma dağılımı beklenen degeri : " + gamma_bek_deg.toFixed(2) + "\nVaryans : " + gamma_varyans.toFixed(2));
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="box">
+        <label for="Gama Dağılımı"><b><i>Gamma Dağılımı</i></b> </label><br>
+        <br>Gamma Dağılımı n değerini giriniz: <input type="text" name="gama_n_degeri" id="gamma_n_degeri"><br>
+        Gamma Dağılımı lambda değerini giriniz: <input type="text" name="gama_x" id="gamma_lambda"><br>
+        <input type="button" class="btn-1" value="Hesapla" id="gamma_hesapla" onclick="gamma()"> 
+    </div>
+
+</body>
+
+</html>
